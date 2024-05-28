@@ -4,13 +4,14 @@ import java.util.ArrayList;
 
 
 public class Restaurants{
-    ArrayList <Restaurants> restaurants = new ArrayList<>();
+    public ArrayList <Restaurants> restaurants = new ArrayList<>();
     private String name;
     private String location;
     private String schelude;
     private String score;
     
-    public Restaurants(String name, String location, String schelude, String score) {
+    public Restaurants(ArrayList<Restaurants> restaurants, String name, String location, String schelude, String score) {
+        this.restaurants = restaurants;
         this.name = name;
         this.location = location;
         this.schelude = schelude;
