@@ -2,8 +2,9 @@ package restaurants;
 
 import java.util.ArrayList;
 
-public class Restaurants {
-    public static ArrayList <Restaurants> restaurants = new ArrayList<>();
+
+public class Restaurants{
+    ArrayList <Restaurants> restaurants = new ArrayList<>();
     private String name;
     private String location;
     private String schelude;
