@@ -1,5 +1,5 @@
 package validations;
 
-public class validations {
+public class Validations {
     
 }

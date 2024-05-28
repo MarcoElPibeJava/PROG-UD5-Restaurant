@@ -1,5 +1,5 @@
 package features;
 
-public class features {
+public class Features {
     
 }

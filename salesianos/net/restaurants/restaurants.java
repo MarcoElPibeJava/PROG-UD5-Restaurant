@@ -2,14 +2,14 @@ package restaurants;
 
 import java.util.ArrayList;
 
-public class restaurants {
-    public static ArrayList <restaurants> restaurants = new ArrayList<>();
+public class Restaurants {
+    public static ArrayList <Restaurants> restaurants = new ArrayList<>();
     private String name;
     private String location;
     private String schelude;
     private String score;
     
-    public restaurants(String name, String location, String schelude, String score) {
+    public Restaurants(String name, String location, String schelude, String score) {
         this.name = name;
         this.location = location;
         this.schelude = schelude;
