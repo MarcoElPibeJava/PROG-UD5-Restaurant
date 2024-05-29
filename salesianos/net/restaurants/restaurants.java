@@ -9,9 +9,8 @@ public class Restaurants {
     private String schelude;
     private String score;
 
-    public Restaurants(ArrayList<Restaurants> restaurants, String name, String location, String schelude,
+    public Restaurants(String name, String location, String schelude,
             String score) {
-        this.restaurantsObjects = restaurants;
         this.name = name;
         this.location = location;
         this.schelude = schelude;
@@ -50,4 +49,7 @@ public class Restaurants {
         this.score = score;
     }
 
+    
+
+    
 }
