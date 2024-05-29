@@ -16,17 +16,17 @@ public class Main {
                     4.-Delete restaurants
                     Q.Stop program
                     """);
-            op = scanner.nextLine();
+            op = scanner.nextLine().toLowerCase();
             switch (op) {
                 case "1":
                     System.out.println("What restaurant do you want to add");
-                    String restaurantName = scanner.nextLine();
+                    String restaurantName = scanner.nextLine().trim().toLowerCase();
                     System.out.println("The location of the restaurant?");
-                    String location = scanner.nextLine();
+                    String location = scanner.nextLine().trim().toLowerCase();
                     System.out.println("the schelude?");
-                    String schelude = scanner.nextLine();
+                    String schelude = scanner.nextLine().trim().toLowerCase();
                     System.out.println("and for the end the score");
-                    String score = scanner.nextLine();
+                    String score = scanner.nextLine().trim().toLowerCase();
                     Features.addRestaurant(restaurantName, location, schelude, score);
                     break;
                 case "2":
