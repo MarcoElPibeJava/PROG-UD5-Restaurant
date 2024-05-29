@@ -21,7 +21,7 @@ public class Features extends Restaurants {
     public static void editRestaurant(String restaurantName) {
         for (Restaurants restaurants : restaurantsObjects) {
             if (restaurants.getName().equals(restaurantName)) {
-                System.out.println("What thing do you want to edit about the restaurant" + restaurants.getName() + "?");
+                System.out.println("What thing do you want to edit about the restaurant; " + restaurants.getName() + "?");
                 System.out.println("""
                         1.Name
                         2.Location
@@ -70,12 +70,15 @@ public class Features extends Restaurants {
         System.out.println("*****Data of all restaurants*****\n");
         for (Restaurants restaurants : restaurantsObjects) {
             System.out.println("Name of the restaurant; " + restaurants.getName() +
-                    "\n" + "Name of the location; " + "\n"
+                    "\n" + "Name of the location; " + restaurants.getLocation() + "\n"
                     + "The schelude; " + restaurants.getSchelude() + "\n" +
                     "The score; " + restaurants.getScore());
             System.out.println("*************************************");
         }
-
+        if (restaurantsObjects.isEmpty()) {
+            System.out.println("You didnt add a restaurant yet");
+        }
+        
     }
 
     public static void deleteRestaurants(){
