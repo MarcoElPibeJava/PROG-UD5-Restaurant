@@ -16,7 +16,7 @@ public class Main {
                     4.-Delete restaurants
                     Q.Stop program
                     """);
-            op = scanner.nextLine();
+            op = scanner.nextLine().toLowerCase();
             switch (op) {
                 case "1":
                     System.out.println("What restaurant do you want to add");

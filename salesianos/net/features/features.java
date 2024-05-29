@@ -87,9 +87,12 @@ public class Features extends Restaurants {
         for (Restaurants restaurants : restaurantsObjects) {
             if (op.equals(restaurants.getName())) {
                 restaurantsObjects.remove(restaurants);
+                System.out.println("Restaurant deleted successfully.");
             }
         }
-        System.out.println("restaurant deleted successfully");
+        if (restaurantsObjects.isEmpty()) {
+            System.out.println("The restaurant that you are looking for it doesnt exists");
+        }
     }
 
 }
