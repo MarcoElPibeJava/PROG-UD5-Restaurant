@@ -63,7 +63,7 @@ public class Features extends Restaurants {
             }
 
         }
-        System.out.println("The program couldnt find the restaurant that you wasnt looking for o it doesnt exist");
+        System.out.println("The program couldnt find the restaurant that you was looking for o it doesnt exist");
     }
 
     public static void showAllRestaurants() {
