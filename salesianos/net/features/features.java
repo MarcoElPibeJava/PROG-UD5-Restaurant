@@ -34,25 +34,25 @@ public class Features extends Restaurants {
                 switch (option) {
                     case "1":
                         System.out.println("Wich name want you to put?");
-                        String name = scanner.nextLine();
+                        String name = scanner.nextLine().trim().toLowerCase();
                         restaurants.setName(name);
                         System.out.println("Name of the restaurant was changed to;" + name);
                         break;
                     case "2":
                         System.out.println("Wich location want you to put?");
-                        String location = scanner.nextLine();
+                        String location = scanner.nextLine().trim().toLowerCase();
                         restaurants.setLocation(location);
                         System.out.println("Location name of the restaurant was changed to;" + location);
                         break;
                     case "3":
                         System.out.println("Wich schelude want you to put?");
-                        String schelude = scanner.nextLine();
+                        String schelude = scanner.nextLine().trim().toLowerCase();
                         restaurants.setSchelude(schelude);
                         System.out.println("The schelude of the restaurant was changed to;" + schelude);
                         break;
                     case "4":
                         System.out.println("Wich name what do you want to put?");
-                        String score = scanner.nextLine();
+                        String score = scanner.nextLine().trim().toLowerCase();
                         restaurants.setScore(score);
                         System.out.println("The score of the restaurant was changed to;" + score);
                         break;
@@ -80,7 +80,7 @@ public class Features extends Restaurants {
 
     public static void deleteRestaurants(){
         System.out.println("Wich restaurant do you want to erase?");
-        String op = scanner.nextLine();
+        String op = scanner.nextLine().toLowerCase().trim();
         for (Restaurants restaurants : restaurantsObjects) {
             if (op.equals(restaurants.getName())) {
                 restaurantsObjects.remove(restaurants);
