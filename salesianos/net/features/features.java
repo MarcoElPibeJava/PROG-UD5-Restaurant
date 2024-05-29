@@ -10,12 +10,12 @@ public class Features extends Restaurants {
 
     Scanner scanner = new Scanner(System.in);
 
-    public Features(ArrayList<Restaurants> restaurants, String name, String location, String schelude, String score) {
-        super(restaurants, name, location, schelude, score);
+    public Features(String name, String location, String schelude, String score) {
+        super(name, location, schelude, score);
     }
 
     public void addRestaurant(String name, String location, String schelude, String score) {
-        Restaurants restaurant = new Restaurants(restaurantsObjects, name, location, schelude, score);
+        Restaurants restaurant = new Restaurants(name, location, schelude, score);
         this.restaurantsObjects.add(restaurant);
         System.out.println("Restaurant" + restaurant.getName() + "was added successfully");
     }
@@ -59,7 +59,7 @@ public class Features extends Restaurants {
                         System.out.println("The score of the restaurant was changed to;" + score);
                         break;
                     default:
-                    System.out.println("You dind't choose a correct option.");
+                        System.out.println("You dind't choose a correct option.");
                         break;
                 }
             }
@@ -67,4 +67,17 @@ public class Features extends Restaurants {
         }
         System.out.println("The program couldnt find the restaurant that you wasnt looking for o it doesnt exist");
     }
+
+    public void showAllRestaurants() {
+        System.out.println("*****Data of all restaurants*****\n");
+        for (Restaurants restaurants : restaurantsObjects) {
+            System.out.println("Name of the restaurant; " + restaurants.getName() +
+                    "\n" + "Name of the location; " + "\n"
+                    + "The schelude; " + restaurants.getSchelude() + "\n" +
+                    "The score; " + restaurants.getScore());
+            System.out.println("*************************************");
+        }
+
+    }
+    
 }
