@@ -79,5 +79,16 @@ public class Features extends Restaurants {
         }
 
     }
-    
+
+    public void deleteRestaurants(){
+        System.out.println("Wich restaurant do you want to erase?");
+        String op = scanner.nextLine();
+        for (Restaurants restaurants : restaurantsObjects) {
+            if (op.equals(restaurants.getName())) {
+                restaurantsObjects.remove(restaurants);
+            }
+        }
+        System.out.println("restaurant deleted successfully");
+    }
+
 }
