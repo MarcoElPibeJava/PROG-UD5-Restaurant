@@ -6,19 +6,19 @@ import restaurants.Restaurants;
 
 public class Features extends Restaurants {
 
-    Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
     public Features(String name, String location, String schelude, String score) {
         super(name, location, schelude, score);
     }
 
-    public void addRestaurant(String name, String location, String schelude, String score) {
+    public static void addRestaurant(String name, String location, String schelude, String score) {
         Restaurants restaurant = new Restaurants(name, location, schelude, score);
-        this.restaurantsObjects.add(restaurant);
+        restaurantsObjects.add(restaurant);
         System.out.println("Restaurant" + restaurant.getName() + "was added successfully");
     }
 
-    public void editRestaurant(String restaurantName) {
+    public static void editRestaurant(String restaurantName) {
         for (Restaurants restaurants : restaurantsObjects) {
             if (restaurants.getName().equals(restaurantName)) {
                 System.out.println("What thing do you want to edit about the restaurant" + restaurants.getName() + "?");
@@ -66,7 +66,7 @@ public class Features extends Restaurants {
         System.out.println("The program couldnt find the restaurant that you wasnt looking for o it doesnt exist");
     }
 
-    public void showAllRestaurants() {
+    public static void showAllRestaurants() {
         System.out.println("*****Data of all restaurants*****\n");
         for (Restaurants restaurants : restaurantsObjects) {
             System.out.println("Name of the restaurant; " + restaurants.getName() +
@@ -78,7 +78,7 @@ public class Features extends Restaurants {
 
     }
 
-    public void deleteRestaurants(){
+    public static void deleteRestaurants(){
         System.out.println("Wich restaurant do you want to erase?");
         String op = scanner.nextLine();
         for (Restaurants restaurants : restaurantsObjects) {
