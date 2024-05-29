@@ -15,7 +15,7 @@ public class Features extends Restaurants {
     public static void addRestaurant(String name, String location, String schelude, String score) {
         Restaurants restaurant = new Restaurants(name, location, schelude, score);
         restaurantsObjects.add(restaurant);
-        System.out.println("Restaurant" + restaurant.getName() + "was added successfully");
+        System.out.println("Restaurant " + restaurant.getName() + " was added successfully");
     }
 
     public static void editRestaurant(String restaurantName) {
@@ -36,25 +36,25 @@ public class Features extends Restaurants {
                         System.out.println("Wich name want you to put?");
                         String name = scanner.nextLine().trim().toLowerCase();
                         restaurants.setName(name);
-                        System.out.println("Name of the restaurant was changed to;" + name);
+                        System.out.println("Name of the restaurant was changed to; " + name);
                         break;
                     case "2":
                         System.out.println("Wich location want you to put?");
                         String location = scanner.nextLine().trim().toLowerCase();
                         restaurants.setLocation(location);
-                        System.out.println("Location name of the restaurant was changed to;" + location);
+                        System.out.println("Location name of the restaurant was changed to; " + location);
                         break;
                     case "3":
                         System.out.println("Wich schelude want you to put?");
                         String schelude = scanner.nextLine().trim().toLowerCase();
                         restaurants.setSchelude(schelude);
-                        System.out.println("The schelude of the restaurant was changed to;" + schelude);
+                        System.out.println("The schelude of the restaurant was changed to; " + schelude);
                         break;
                     case "4":
                         System.out.println("Wich name what do you want to put?");
                         String score = scanner.nextLine().trim().toLowerCase();
                         restaurants.setScore(score);
-                        System.out.println("The score of the restaurant was changed to;" + score);
+                        System.out.println("The score of the restaurant was changed to; " + score);
                         break;
                     default:
                         System.out.println("You dind't choose a correct option.");
