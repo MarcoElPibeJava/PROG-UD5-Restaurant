@@ -1,15 +1,13 @@
-package restaurants;
+package restaurant;
 
-import java.util.ArrayList;
+public class Restaurant {
 
-public class Restaurants {
-    public static ArrayList<Restaurants> restaurantsObjects = new ArrayList<>();
     private String name;
     private String location;
     private String schelude;
     private String score;
 
-    public Restaurants(String name, String location, String schelude,
+    public Restaurant(String name, String location, String schelude,
             String score) {
         this.name = name;
         this.location = location;
@@ -49,7 +47,4 @@ public class Restaurants {
         this.score = score;
     }
 
-    
-
-    
 }
