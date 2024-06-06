@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import restaurants.Restaurant;
+import restaurant.Restaurant;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package restaurants;
+package restaurant;
 
 public class Restaurant {
 
