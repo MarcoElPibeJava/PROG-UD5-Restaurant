@@ -2,9 +2,9 @@ package features;
 
 import java.util.Scanner;
 
-import restaurants.Restaurants;
+import restaurants.Restaurant;
 
-public class Features extends Restaurants {
+public class Features extends Restaurant {
 
     static Scanner scanner = new Scanner(System.in);
 
@@ -13,15 +13,16 @@ public class Features extends Restaurants {
     }
 
     public static void addRestaurant(String name, String location, String schelude, String score) {
-        Restaurants restaurant = new Restaurants(name, location, schelude, score);
+        Restaurant restaurant = new Restaurant(name, location, schelude, score);
         restaurantsObjects.add(restaurant);
         System.out.println("Restaurant " + restaurant.getName() + " was added successfully");
     }
 
     public static void editRestaurant(String restaurantName) {
-        for (Restaurants restaurants : restaurantsObjects) {
+        for (Restaurant restaurants : restaurantsObjects) {
             if (restaurants.getName().equals(restaurantName)) {
-                System.out.println("What thing do you want to edit about the restaurant; " + restaurants.getName() + "?");
+                System.out
+                        .println("What thing do you want to edit about the restaurant; " + restaurants.getName() + "?");
                 System.out.println("""
                         1.Name
                         2.Location
@@ -68,7 +69,7 @@ public class Features extends Restaurants {
 
     public static void showAllRestaurants() {
         System.out.println("*****Data of all restaurants*****\n");
-        for (Restaurants restaurants : restaurantsObjects) {
+        for (Restaurant restaurants : restaurantsObjects) {
             System.out.println("Name of the restaurant; " + restaurants.getName() +
                     "\n" + "Name of the location; " + restaurants.getLocation() + "\n"
                     + "The schelude; " + restaurants.getSchelude() + "\n" +
@@ -78,13 +79,13 @@ public class Features extends Restaurants {
         if (restaurantsObjects.isEmpty()) {
             System.out.println("You didnt add a restaurant yet");
         }
-        
+
     }
 
-    public static void deleteRestaurants(){
+    public static void deleteRestaurants() {
         System.out.println("Wich restaurant do you want to erase?");
         String op = scanner.nextLine().toLowerCase().trim();
-        for (Restaurants restaurants : restaurantsObjects) {
+        for (Restaurant restaurants : restaurantsObjects) {
             if (op.equals(restaurants.getName())) {
                 restaurantsObjects.remove(restaurants);
                 System.out.println("Restaurant deleted successfully.");

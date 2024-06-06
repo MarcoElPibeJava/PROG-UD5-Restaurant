@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import features.Features;
-import restaurants.Restaurants;
+import restaurants.Restaurant;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Restaurants> restaurantsObjects = new ArrayList<>();
+        ArrayList<Restaurant> restaurantsObjects = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         boolean stillOn = true;
         String op;
@@ -35,7 +35,8 @@ public class Main {
                 case "2":
                     System.out.println("wich restaurant do you want to edit?");
                     String name = scanner.nextLine();
-                    Features.editRestaurant(name);;
+                    Features.editRestaurant(name);
+                    ;
                     break;
                 case "3":
                     Features.showAllRestaurants();
