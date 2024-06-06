@@ -10,7 +10,7 @@ public class Main {
         boolean stillOn = true;
         String op;
         do {
-            JOptionPane.showMessageDialog(null, "null", "Welcome to the program, what do you want?", 0);
+            JOptionPane.showMessageDialog(null, "Welcome to the program, what do you want?");
             op = JOptionPane.showInputDialog("""
                     1.-Add restaurant
                     2.-Edit restaurant
