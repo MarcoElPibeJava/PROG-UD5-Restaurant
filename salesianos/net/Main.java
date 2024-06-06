@@ -1,128 +1,126 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 import restaurant.Restaurant;
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<Restaurant> restaurantsObjects = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
         boolean stillOn = true;
         String op;
         do {
-            System.out.println("Welcome to the program, what do you want?");
-            System.out.println("""
+            JOptionPane.showMessageDialog(null, "null", "Welcome to the program, what do you want?", 0);
+            op = JOptionPane.showInputDialog("""
                     1.-Add restaurant
                     2.-Edit restaurant
                     3.-Show restaurant
                     4.-Delete restaurant
                     Q.Stop program
-                    """);
-            op = scanner.nextLine().toLowerCase();
+                    """).toLowerCase();
             switch (op) {
                 case "1":
-                    System.out.println("What restaurant do you want to add");
-                    String restaurantName = scanner.nextLine().trim().toLowerCase();
-                    System.out.println("The location of the restaurant?");
-                    String location = scanner.nextLine().trim().toLowerCase();
-                    System.out.println("the schelude?");
-                    String schelude = scanner.nextLine().trim().toLowerCase();
-                    System.out.println("and for the end the score");
-                    String score = scanner.nextLine().trim().toLowerCase();
+                    String restaurantName = JOptionPane.showInputDialog("What restaurant do you want to add").trim()
+                            .toLowerCase();
+                    String location = JOptionPane.showInputDialog("The location of the restaurant?").toLowerCase()
+                            .trim();
+                    String schelude = JOptionPane.showInputDialog("the schelude?").trim().toLowerCase();
+                    String score = JOptionPane.showInputDialog("and for the end the score").trim().toLowerCase();
                     Restaurant restaurant = new Restaurant(restaurantName, location, schelude, score);
-                    restaurantsObjects.add(restaurant);
                     System.out.println("Restaurant " + restaurant.getName() + " was added successfully");
                     break;
                 case "2":
-                    System.out.println("wich restaurant do you want to edit?");
-                    String nameEdit = scanner.nextLine();
+                    String nameEdit = JOptionPane.showInputDialog("wich restaurant do you want to edit?");
+
                     for (Restaurant restaurants : restaurantsObjects) {
                         if (restaurants.getName().equals(nameEdit)) {
-                            System.out
-                                    .println("What thing do you want to edit about the restaurant; "
-                                            + restaurants.getName() + "?");
-                            System.out.println("""
-                                    1.Name
+                            JOptionPane.showMessageDialog(null, "What thing do you want to edit about the restaurant; "
+                                    + restaurants.getName() + "?");
+                            String option = JOptionPane.showInputDialog("""
+                                     1.Name
                                     2.Location
                                     3.Schelude
                                     4.Score
 
                                     Choose what registry want you to edit and write the number
                                     """);
-                            String option = scanner.nextLine();
                             switch (option) {
                                 case "1":
-                                    System.out.println("Wich name want you to put?");
-                                    String nameEditRestaurant = scanner.nextLine().trim().toLowerCase();
+                                    String nameEditRestaurant = JOptionPane
+                                            .showInputDialog("Wich name want you to put?").trim().toLowerCase();
                                     restaurants.setName(nameEditRestaurant);
-                                    System.out.println("Name of the restaurant was changed to; " + nameEditRestaurant);
+                                    JOptionPane.showMessageDialog(null,
+                                            "Name of the restaurant was changed to; " + nameEditRestaurant);
                                     break;
                                 case "2":
-                                    System.out.println("Wich location want you to put?");
-                                    String locationEdit = scanner.nextLine().trim().toLowerCase();
+                                    String locationEdit = JOptionPane.showInputDialog("Wich location want you to put?")
+                                            .trim().toLowerCase();
                                     restaurants.setLocation(locationEdit);
-                                    System.out
-                                            .println("Location name of the restaurant was changed to; " + locationEdit);
+                                    JOptionPane.showMessageDialog(null,
+                                            "Name of the location was changed to; " + locationEdit);
                                     break;
                                 case "3":
-                                    System.out.println("Wich schelude want you to put?");
-                                    String scheludeEdit = scanner.nextLine().trim().toLowerCase();
+                                    String scheludeEdit = JOptionPane.showInputDialog("Wich schelude want you to put?")
+                                            .trim().toLowerCase();
                                     restaurants.setSchelude(scheludeEdit);
-                                    System.out
-                                            .println("The schelude of the restaurant was changed to; " + scheludeEdit);
+                                    JOptionPane.showMessageDialog(null,
+                                            "Schelude of the restaurant was changed to; " + scheludeEdit);
                                     break;
                                 case "4":
-                                    System.out.println("Wich name what do you want to put?");
-                                    String scoreEdit = scanner.nextLine().trim().toLowerCase();
+                                    String scoreEdit = JOptionPane.showInputDialog("Wich score want you to put?").trim()
+                                            .toLowerCase();
                                     restaurants.setScore(scoreEdit);
-                                    System.out.println("The score of the restaurant was changed to; " + scoreEdit);
+                                    JOptionPane.showMessageDialog(null,
+                                            "The score of the restaurant was changed to; " + scoreEdit);
                                     break;
                                 default:
-                                    System.out.println("You dind't choose a correct option.");
+                                    JOptionPane.showMessageDialog(null, "You dind't choose a correct option.", "Error",
+                                            JOptionPane.ERROR_MESSAGE);
                                     break;
                             }
                         }
 
                     }
-                    System.out.println(
-                            "The program couldnt find the restaurant that you was looking for o it doesnt exist");
-                    ;
+                    JOptionPane.showMessageDialog(null,
+                            "The program couldnt find the restaurant that you was looking for o it doesnt exist",
+                            "Error", JOptionPane.ERROR_MESSAGE);
                     break;
                 case "3":
-                    System.out.println("*****Data of all restaurants*****\n");
+                    JOptionPane.showMessageDialog(null, "*****Data of all restaurants*****\n");
                     for (Restaurant restaurants : restaurantsObjects) {
-                        System.out.println("Name of the restaurant; " + restaurants.getName() +
+                        JOptionPane.showMessageDialog(null, "Name of the restaurant; " + restaurants.getName() +
                                 "\n" + "Name of the location; " + restaurants.getLocation() + "\n"
                                 + "The schelude; " + restaurants.getSchelude() + "\n" +
                                 "The score; " + restaurants.getScore());
-                        System.out.println("*************************************");
+                        JOptionPane.showMessageDialog(null, "*************************************");
                     }
                     if (restaurantsObjects.isEmpty()) {
-                        System.out.println("You didnt add a restaurant yet");
+                        JOptionPane.showMessageDialog(null, "You didnt add a restaurant yet", "Error",
+                                JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case "4":
-                    System.out.println("Wich restaurant do you want to erase?");
-                    String opDelete = scanner.nextLine().toLowerCase().trim();
+                    String opDelete = JOptionPane.showInputDialog("Wich restaurant do you want to erase?").toLowerCase()
+                            .trim();
+                    System.out.println();
                     for (Restaurant restaurants : restaurantsObjects) {
                         if (opDelete.equals(restaurants.getName())) {
                             restaurantsObjects.remove(restaurants);
-                            System.out.println("Restaurant deleted successfully.");
+                            JOptionPane.showMessageDialog(null, "Restaurant deleted successfully.");
                         }
                     }
                     if (restaurantsObjects.isEmpty()) {
-                        System.out.println("The restaurant that you are looking for it doesnt exists");
+                        JOptionPane.showMessageDialog(null, "The restaurant that you are looking for it doesnt exists");
                     }
                     break;
                 case "q":
-                    System.out.println("stopping program");
+                    JOptionPane.showMessageDialog(null, "stopping program");
                     stillOn = false;
                     break;
                 default:
-                    System.out.println("You didnt choose a correct option");
+                    JOptionPane.showMessageDialog(null, "You didnt choose a correct option");
                     break;
             }
         } while (stillOn);
-        scanner.close();
     }
 }
