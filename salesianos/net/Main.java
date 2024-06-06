@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import features.Features;
+import restaurants.Restaurants;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Restaurants> restaurantsObjects = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         boolean stillOn = true;
         String op;
