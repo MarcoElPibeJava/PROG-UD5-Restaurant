@@ -8,7 +8,6 @@ import restaurant.Restaurant;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Restaurant> restaurantsObjects = new ArrayList<>();
-        Restaurant restaurant = new Restaurant(null, null, null, 0);
         boolean stillOn = true;
         String op;
         do {
@@ -29,17 +28,22 @@ public class Main {
                             .trim();
                     String schelude = JOptionPane.showInputDialog("the schelude?").trim().toLowerCase();
 
-                    int score = Integer.parseInt(JOptionPane
-                            .showInputDialog("and for the end the score, just values between 0 and 5 are permited."));
-                    if (score == 0 || score == 1 || score == 2 || score == 3 || score == 4 || score == 5) {
-                        restaurant = new Restaurant(restaurantName, location, schelude, score);
-                        restaurantsObjects.add(restaurant);
-                        System.out.println("Restaurant " + restaurant.getName() + " was added successfully");
-                        break;
-                    } else {
-                        System.out.println("You didnt put the correct score.");
-                    }
+                    try {
+                        int score = Integer.parseInt(JOptionPane
+                                .showInputDialog(
+                                        "and for the end the score, just values between 0 and 5 are permited."));
+                        if (score == 0 || score == 1 || score == 2 || score == 3 || score == 4 || score == 5) {
+                            Restaurant restaurant = new Restaurant(restaurantName, location, schelude, score);
+                            restaurantsObjects.add(restaurant);
+                            System.out.println("Restaurant " + restaurant.getName() + " was added successfully");
+                            break;
+                        } else {
+                            System.out.println("You didnt put the correct score.");
+                        }
 
+                    } catch (NumberFormatException e) {
+                        System.out.println("You didnt put a valid score.");
+                    }
                 case "2":
                     String nameEdit = JOptionPane.showInputDialog("wich restaurant do you want to edit?");
 
@@ -78,17 +82,22 @@ public class Main {
                                             "Schelude of the restaurant was changed to; " + scheludeEdit);
                                     break;
                                 case "4":
-                                    int scoreEdit = Integer.parseInt(JOptionPane.showInputDialog(
-                                            "Wich score want you to edit? remember just to use values between 0 and 5"));
-                                    if (scoreEdit == 0 || scoreEdit == 1 || scoreEdit == 2 || scoreEdit == 3
-                                            || scoreEdit == 4 || scoreEdit == 5) {
-                                        restaurants.setScore(scoreEdit);
-                                        JOptionPane.showMessageDialog(null,
-                                                "The score of the restaurant was changed to; " + scoreEdit);
-                                    } else {
-                                        System.out.println(
-                                                "you didnt put the correct score values, restaurant wasnt added.");
+                                    try {
+                                        int scoreEdit = Integer.parseInt(JOptionPane.showInputDialog(
+                                                "Wich score want you to edit? remember just to use values between 0 and 5"));
+                                        if (scoreEdit == 0 || scoreEdit == 1 || scoreEdit == 2 || scoreEdit == 3
+                                                || scoreEdit == 4 || scoreEdit == 5) {
+                                            restaurants.setScore(scoreEdit);
+                                            JOptionPane.showMessageDialog(null,
+                                                    "The score of the restaurant was changed to; " + scoreEdit);
+                                        } else {
+                                            System.out.println(
+                                                    "you didnt put the correct score values, restaurant wasnt added.");
+                                        }
+                                    } catch (NumberFormatException e) {
+                                        System.out.println("you didnt put a valid score");
                                     }
+
                                     break;
                                 default:
                                     JOptionPane.showMessageDialog(null, "You dind't choose a correct option.", "Error",
@@ -121,6 +130,7 @@ public class Main {
                         if (opDelete.equals(restaurants.getName())) {
                             restaurantsObjects.remove(restaurants);
                             JOptionPane.showMessageDialog(null, "Restaurant deleted successfully.");
+                            break;
                         }
                     }
                     if (restaurantsObjects.isEmpty()) {
