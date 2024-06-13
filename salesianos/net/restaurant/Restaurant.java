@@ -49,7 +49,7 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return "Restaurant Name;" + name + ", The location of the restaurant=" + location + ", the schelude=" + schelude + ", and the score=" + score
+        return "Restaurant Name:" + name + ", The location of the restaurant;" + location + ", the schelude;" + schelude + ", and the score;" + score
                 + "+ \n";
     }
 }
