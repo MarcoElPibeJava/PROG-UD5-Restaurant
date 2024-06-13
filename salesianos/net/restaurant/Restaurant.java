@@ -5,10 +5,10 @@ public class Restaurant {
     private String name;
     private String location;
     private String schelude;
-    private String score;
+    private int score;
 
     public Restaurant(String name, String location, String schelude,
-            String score) {
+            int score) {
         this.name = name;
         this.location = location;
         this.schelude = schelude;
@@ -39,12 +39,17 @@ public class Restaurant {
         this.schelude = schelude;
     }
 
-    public String getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
+    @Override
+    public String toString() {
+        return "Restaurant Name:" + name + ", The location of the restaurant;" + location + ", the schelude;" + schelude + ", and the score;" + score
+                + "+ \n";
+    }
 }
